@@ -1,25 +1,28 @@
 
+// General Layout Components
 import CardLayout from "@/Components/Layout/CardLayout";
+
+// Dashboard components
 import DashboardTopStats from "./DashBoardElements/DashboardTopStats";
-import useTransformPromise from "@/Hooks/Common/useTransformPromise";
-import { dataRefs } from "@/JSONS/Fr-Texts/GlobalTexts";
+import DashboardCompanieEmployees from "./DashBoardElements/DashboardCompanieEmployees";
+import DashboardLastOffers from "./DashBoardElements/DashboardLastOffers";
+import DashboardSectorOffers from "./DashBoardElements/DashboardSectorOffers";
 
 function Dashboard() {
 
-    // const fetchUrl = `${import.meta.env.VITE_APP_FAKE_DATA}/Dashboard.json`
-    const fetchUrl = 'https://fakestoreapi.com/products/3'
-
-    const { data, refetch } = useTransformPromise(fetchUrl, dataRefs.dashboardDispatch);
-
-    console.log(data)
-
+    ////////////////
+    // JSX
     return (
 
-        <CardLayout>
+        <CardLayout css={`w-full flex-row flex flex-wrap`}>
 
-            {/* <DashboardTopStats data={data.topStats} /> */}
+            <DashboardTopStats />
 
-            <button onClick={refetch}>BTN</button>
+            <DashboardCompanieEmployees />
+
+            <DashboardLastOffers />
+
+            <DashboardSectorOffers />
 
         </CardLayout>
     );

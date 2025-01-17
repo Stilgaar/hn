@@ -16,7 +16,7 @@ export default defineConfig({
   },
   server: {
     open: true,
-    port: 3000,
+    port: 3333,
   },
   esbuild: {
     loader: 'jsx',  // This line is changed
