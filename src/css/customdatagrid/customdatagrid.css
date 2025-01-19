@@ -1,0 +1,152 @@
+/* .freezed {
+    position: sticky !important;
+    z-index: 45;
+    top: 0px;
+    background-color: white;
+} */
+
+/* Styles pour le tableau DataGrid */
+.custom-data-grid-container {
+    /* Table prend toute la largeur du conteneur */
+    border-collapse: collapse;
+    /* Fusionne les bordures des cellules de tableau */
+    table-layout: auto;
+    /* overflow-x: hidden; */
+    /* Permet aux cellules du tableau de s'ajuster en fonction du contenu */
+    /* Ajoutez d'autres styles si nécessaire */
+}
+
+.custom-data-grid-container thead {
+    position: sticky;
+    top: 0px;
+    z-index: 5;
+    padding-top: 20px;
+    background-color: white;
+}
+
+/* Styles for freezing columns */
+.custom-data-grid-container th.freezed,
+.custom-data-grid-container td.freezed {
+    position: sticky;
+    z-index: 10;
+    background-color: white;
+}
+
+.custom-data-grid-container tr:nth-child(odd) td.freezed {
+    background-color: #f8f8f8;
+}
+
+/* Frozen cells in even rows */
+.custom-data-grid-container tr:nth-child(even) td.freezed {
+    background-color: white;
+}
+
+/* .custom-data-grid-container thead tr {} */
+
+.custom-data-grid-container tbody {
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: white;
+}
+
+/* Styles for table headers */
+.custom-data-grid-container th {
+    /* background-color: #e4e4e4; */
+    /* Background color for headers */
+    text-align: left;
+    /* Align text to the left */
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 8px;
+    /* Padding inside header cells */
+    z-index: 150;
+}
+
+/* Styles for table rows and cells */
+.custom-data-grid-container tr {
+    background-color: #ffffff;
+    /* border-bottom: 1px solid #a5a5a5; */
+    color: black;
+    /* Adds a border below each row */
+}
+
+.custom-data-grid-container td {
+    line-height: 50px;
+}
+
+.custom-data-grid-container td.admin {
+    line-height: 35px;
+    font-size: 12px;
+}
+
+tr[data-matching="true"] {
+    background-color: #ca0000;
+    /* your styles for a matching row */
+}
+
+.custom-data-grid-container tbody tr:hover,
+.custom-data-grid-selectedrow:hover {
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+}
+
+.custom-data-grid-container tbody tr:hover {
+    background-color: rgba(241, 241, 241, 0.804);
+}
+
+
+
+/* Optional: Responsive table for smaller screens */
+@media screen and (max-width: 600px) {
+    .custom-data-grid-container {
+        display: block;
+        overflow-x: auto;
+        /* Allows table to be scrollable horizontally */
+    }
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* VERTICAL */
+.custom-data-grid-container tbody tr:nth-child(even) {
+    background-color: white;
+}
+
+.custom-data-grid-container tbody tr:nth-child(odd),
+.data-grid-vertical tr:nth-child(odd) {
+    background-color: #3b3a3a09;
+}
+
+.data-grid-vertical {
+    font-size: 13px;
+}
+
+.data-grid-vertical tr {
+    color: rgb(85, 85, 85);
+}
+
+.custom-data-grid-container th.customdatagrid-child-sub-headers {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.custom-data-grid-container th.customdatagrid-child-sub-headers:nth-child(odd) {
+    background-color: rgb(216, 216, 216);
+}
+
+.custom-data-grid-container th.customdatagrid-child-sub-headers:nth-child(even) {
+    background-color: rgb(242, 242, 242);
+}
+
+.custom-data-grid-container td.customdatagrid-child-sub-cells:nth-child(odd) {
+    background-color: rgba(216, 216, 216, 0.187);
+}
+
+/* .custom-data-grid-container td.customdatagrid-child-sub-cells:nth-child(even) {
+
+} */

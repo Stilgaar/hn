@@ -25,7 +25,7 @@ const DashBoardCardsMini = ({ stat }) => {
 
         <CardLayout css={`md:w-6/12 lg:w-3/12 w-full flex flex-nowrap flex-row `}>
 
-            <CardLayout css={`w-10/12 p-1 rounded-l-lg shadow`}>
+            <CardLayout css={`w-10/12 rounded-l-lg shadow`}>
 
                 <Title text={stat.title} El={"h4"} css={`uppercase font-bold text-sm`} />
 

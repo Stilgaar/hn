@@ -1,8 +1,28 @@
+import CustomDataGrid from "@/Components/DataGrid/CustomDataGrid";
+
 function Employees() {
+
+    const rows = [
+        {
+            element: "one"
+        },
+        {
+            element: "two"
+        }
+    ]
+
+    const dataGridColumns = [
+        {
+            key: "element", name: "Element"
+        }
+    ]
+
+    const dispatchType = "EmployeeTestDispatch"
+
     return (
 
         <>
-            Employees
+            <CustomDataGrid rows={rows} dataGridColumns={dataGridColumns} dispatchType={dispatchType} />
         </>
     );
 }

@@ -62,5 +62,31 @@
             "joboffernew": 1,
             "jobofferclosed": 1
         }
+    ],
+    "secttorOffers": [
+        {
+            "name": "Service IT",
+            "value": 40
+        },
+        {
+            "name": "Service Marketing",
+            "value": 70
+        },
+        {
+            "name": "Service Communication",
+            "value": 50
+        },
+        {
+            "name": "Service RH",
+            "value": 90
+        },
+        {
+            "name": "Service Marketing",
+            "value": 70
+        },
+        {
+            "name": "Service Marketing",
+            "value": 80
+        }
     ]
 }
