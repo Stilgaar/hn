@@ -2,7 +2,7 @@ function MainLayout({ children }) {
 
     return (
 
-        <main className={`ml-[185px] bg-white h-full`}>
+        <main className={`ml-[185px] bg-white h-screen`}>
 
             {children}
 

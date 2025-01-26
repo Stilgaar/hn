@@ -4,7 +4,7 @@ import { useCheckedContext } from "../DataGridFilterContext/CheckedContext";
 import { useOptionsVisibility } from "../DataGridFilterContext/VisilibityContext";
 import { resetAllCheckedDataGridFilters } from "../DataGridStateManagement/checkedState/checkedDispatch";
 
-import { dataRefs } from "@/JSONS/Fr-Texts/GlobalTexts";
+import { dataGridRefs } from "../DataGridRenderElements/dataGridRefs";
 
 function XlsCancelButton({
     dispatchType,
@@ -27,11 +27,11 @@ function XlsCancelButton({
             left={true}>
 
             <span className={`place-content-center pr-2`}>
-                <dataRefs.cancelIcon size={20} />
+                <dataGridRefs.cancelIcon size={20} />
             </span>
 
             <span className={`place-content-center`}>
-                {dataRefs.abord}
+                {dataGridRefs.abord}
             </span>
 
         </BtnDataGrid>

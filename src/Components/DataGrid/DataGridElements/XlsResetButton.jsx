@@ -1,4 +1,5 @@
 import { dataRefs } from "@/JSONS/Fr-Texts/GlobalTexts";
+import { dataGridRefs } from "../DataGridRenderElements/dataGridRefs";
 
 import BtnDataGrid from "./BtnDataGrid";
 
@@ -36,11 +37,11 @@ function XlsResetButton({
         <BtnDataGrid handleClick={handleResetOptions} >
 
             <span className={`place-content-center pr-2`}>
-                <dataRefs.resetIcon size={20} />
+                <dataGridRefs.resetIcon size={20} />
             </span>
 
             <span className={`place-content-center`}>
-                {dataRefs.reset}
+                {dataGridRefs.reset}
             </span>
 
         </BtnDataGrid>

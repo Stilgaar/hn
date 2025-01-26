@@ -2,6 +2,7 @@ import BtnDataGrid from "./BtnDataGrid";
 
 import { useFilterContext } from "../DataGridFilterContext/DataGridsFilterContext";
 import { dataRefs } from "@/JSONS/Fr-Texts/GlobalTexts";
+import { dataGridRefs } from "../DataGridRenderElements/dataGridRefs";
 
 import { addDelFiltersDataGrid } from "../DataGridStateManagement/filterState/filterDispatch";
 
@@ -49,7 +50,7 @@ function XlsOkButton({
             right={true}>
 
             <span className={`place-content-center pr-2`}>
-                <dataRefs.searchBtnIcon size={20} />
+                <dataGridRefs.searchIcon size={20} />
             </span>
 
             <span className={`t-center place-content-center`}>

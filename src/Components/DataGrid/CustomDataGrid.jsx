@@ -44,6 +44,9 @@ import React, { useEffect, useMemo, useId, useRef, useState, useCallback } from 
 
 // import useStateContext from '@/Hooks/StateManagement/useStateContext';
 
+import { FilterContextProvider } from './DataGridFilterContext/DataGridsFilterContext';
+import { CheckedContextProvider } from './DataGridFilterContext/CheckedContext';
+
 // React Router Dom 6 inbuild Hooks
 import { useParams, useNavigate } from 'react-router-dom';
 
@@ -71,7 +74,20 @@ import DataGridFilterHeaders from './DataGridElements/DataGridFilterHeaders';
 import DataGridFilterRows from './DataGridElements/DataGridFilterRows';
 
 // Peronal CSS for the datagrid
-import "../../css/customdatagrid/customdatagrid.css"
+import "./Styles/customdatagrid.css"
+import "./Styles/selectorBox.css"
+
+function DataGrid(props) {
+
+    return (
+        <FilterContextProvider>
+            <CheckedContextProvider>
+                <CustomDataGrid {...props} />
+            </CheckedContextProvider>
+        </FilterContextProvider>
+    )
+}
+
 
 function CustomDataGrid({
     buisnessBase,
@@ -289,92 +305,94 @@ function CustomDataGrid({
     ////////////////
     // DataGrid JSX
     return (
-        <>
-            {!title ? null : <Title El={`h3`} css={`pl-2`}>{title}</Title>}
+        <FilterContextProvider>
+            <CheckedContextProvider>
 
-            <div ref={containerRef}
-                className={`overflow-x-auto bg-white font-[13px] 
+                {!title ? null : <Title El={`h3`} css={`pl-2`}>{title}</Title>}
+
+                <div ref={containerRef}
+                    className={`overflow-x-auto bg-white font-[13px] 
                             ${width} 
                             ${getTypeDataGridWrapperCss} 
                             ${addCss} 
                             ${hvMin}`}>
 
-                <table className={`custom-data-grid-container relative ${getTypeDataGridContainerCss}`}>
+                    <table className={`custom-data-grid-container relative ${getTypeDataGridContainerCss}`}>
 
-                    <DataGridFilterHeaders
-                        dataGridColumns={dataGridColumns}
-                        transformedDataGridColumns={transformedDataGridColumns}
-                        dispatchType={dispatchType}
-                        memoizedWidth={memoizedWidth}
-                        onSortColumnsChange={onSortColumnsChange}
-                        haveHeaders={haveHeaders}
-                    />
+                        <DataGridFilterHeaders
+                            dataGridColumns={dataGridColumns}
+                            transformedDataGridColumns={transformedDataGridColumns}
+                            dispatchType={dispatchType}
+                            memoizedWidth={memoizedWidth}
+                            onSortColumnsChange={onSortColumnsChange}
+                            haveHeaders={haveHeaders}
+                        />
 
-                    <DataGridFilterRows
-                        rows={currentPosts}
-                        dataGridColumns={dataGridColumns}
-                        parentGUIDName={parentGUIDName}
-                        dispatchType={dispatchType}
-                        sortColumns={sortColumns}
-                    >
-                        {(finalRows) => (
+                        <DataGridFilterRows
+                            rows={currentPosts}
+                            dataGridColumns={dataGridColumns}
+                            parentGUIDName={parentGUIDName}
+                            dispatchType={dispatchType}
+                            sortColumns={sortColumns}
+                        >
+                            {(finalRows) => (
 
-                            <tbody className="w-max">
+                                <tbody className="w-max">
 
-                                {!pending && finalRows?.length > 0 &&
-                                    finalRows.map((row, rowIndex) => (
+                                    {!pending && finalRows?.length > 0 &&
+                                        finalRows.map((row, rowIndex) => (
 
-                                        <MemoizedCustomTableRow
-                                            key={`${rowIndex}-${id}`}
-                                            rowIndex={rowIndex}
-                                            row={row}
-                                            dataGridColumns={dataGridColumns}
-                                            GUID={GUID}
-                                            lineHeight={lineHeight}
+                                            <MemoizedCustomTableRow
+                                                key={`${rowIndex}-${id}`}
+                                                rowIndex={rowIndex}
+                                                row={row}
+                                                dataGridColumns={dataGridColumns}
+                                                GUID={GUID}
+                                                lineHeight={lineHeight}
+                                            />
+
+                                        ))
+                                    }
+
+                                    {!pending && (!finalRows || finalRows.length === 0) &&
+
+                                        <DataGridEmpty
+                                            colSpan={transformedDataGridColumns?.length || 1}
+                                            dataGridEmptyHeight={dataGridEmptyHeight}
                                         />
+                                    }
 
-                                    ))
-                                }
+                                </tbody>
 
-                                {!pending && (!finalRows || finalRows.length === 0) &&
+                            )}
 
-                                    <DataGridEmpty
-                                        colSpan={transformedDataGridColumns?.length || 1}
-                                        dataGridEmptyHeight={dataGridEmptyHeight}
-                                    />
-                                }
+                        </DataGridFilterRows>
 
-                            </tbody>
-
-                        )}
-
-                    </DataGridFilterRows>
-
-                </table>
-
-            </div>
-
-            {(typeDataGrid !== "addPage" && typeDataGrid !== "info" && typeDataGrid !== "params") &&
-
-                <div className={`flex items-center justify-center`}>
-
-                    <Pagination
-                        postsPerPage={numberOfPages}
-                        totalPosts={finalRows?.length}
-                        paginate={paginate}
-                        currentPage={currentPage} />
+                    </table>
 
                 </div>
 
-            }
+                {(typeDataGrid !== "addPage" && typeDataGrid !== "info" && typeDataGrid !== "params") &&
 
-        </>
+                    <div className={`flex items-center justify-center`}>
+
+                        <Pagination
+                            postsPerPage={numberOfPages}
+                            totalPosts={finalRows?.length}
+                            paginate={paginate}
+                            currentPage={currentPage} />
+
+                    </div>
+
+                }
+            </CheckedContextProvider>
+        </FilterContextProvider >
 
     );
 
 }
 
-export default CustomDataGrid;
+export default DataGrid;
 
 // I Need theses classes for gulp go have them
 // pl-1

@@ -1,4 +1,5 @@
-import CustomDataGrid from "@/Components/DataGrid/CustomDataGrid";
+import DataGrid from "@/Components/DataGrid/CustomDataGrid";
+import { dataGridRefs } from "@/Components/DataGrid/DataGridRenderElements/dataGridRefs";
 
 function Employees() {
 
@@ -22,7 +23,12 @@ function Employees() {
     return (
 
         <>
-            <CustomDataGrid rows={rows} dataGridColumns={dataGridColumns} dispatchType={dispatchType} />
+            <DataGrid
+                rows={rows}
+                dataGridColumns={dataGridColumns}
+                dispatchType={dispatchType}
+                hvMin="h-full"
+            />
         </>
     );
 }

@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.row {
+    @apply flex flex-row;
+}
+
+.col {
+    @apply flex flex-col;
+}
+
+.btn-general-datagrid {
+    @apply px-4 py-2 rounded-md font-medium transition-colors duration-200;
+}
+
+.btn-general-datagrid.ok-color {
+    @apply bg-gradient-to-r from-green-700 to-green-500 text-green-700;
+}
+
+.btn-general-datagrid.error-color {
+    @apply bg-gradient-to-r from-red-500 to-red-300 text-red-700 cursor-not-allowed;
+}
+
+.btn-general-datagrid.red-color {
+    @apply bg-gradient-to-r from-red-500 to-red-400 text-red-700;
+}
+
+.btn-general-datagrid.reset-color {
+    @apply bg-gradient-to-r from-blue-1-500 to-blue-1-300 text-blue-1-500;
+}
+
+.btn-general-datagrid.cancel-color {
+    @apply bg-gradient-to-r from-slate-600 to-slate-400 text-slate-400;
+}
+
+.btn-general-datagrid.blue-color {
+    @apply bg-gradient-to-r from-blue-700 to-blue-400 text-blue-700;
+}
+
+.btn-general-datagrid .btn-general-datagrid-interieur.activate {
+    @apply bg-gradient-to-r from-slate-900 to-slate-200 text-white;
+}

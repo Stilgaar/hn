@@ -1,4 +1,5 @@
-import { dataRefs } from "@/JSONS/Fr-Texts/GlobalTexts";
+
+import { dataGridRefs } from "../DataGridRenderElements/dataGridRefs";
 import { useFilterContext } from "../DataGridFilterContext/DataGridsFilterContext";
 import { initialiseDataGridFilters } from "../DataGridStateManagement/filterState/filterDispatch";
 import { useCheckedContext } from "../DataGridFilterContext/CheckedContext";
@@ -18,7 +19,7 @@ function DataGridGlobalResetBtn({ dataGridColumns, dispatchType, setSortColumns 
 
         <div className={`custom-selector place-content-center pl-3`}>
 
-            <dataRefs.resetIcon onClick={() => {
+            <dataGridRefs.resetIcon onClick={() => {
                 handleResetAllHeaders()
                 setSortColumns([])
             }}

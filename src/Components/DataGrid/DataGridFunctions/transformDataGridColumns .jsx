@@ -5,6 +5,7 @@ import useGetFilters from "../DataGridHooks/useGetFilters";
 
 // Al the texts and stuff
 import { dataRefs } from "@/JSONS/Fr-Texts/GlobalTexts";
+import { dataGridRefs } from "../DataGridRenderElements/dataGridRefs";
 
 // Personal hook to consume the related context. This is for the popup windows for the search. (so there is only one that can pop up at the same time)
 import { useOptionsVisibility } from "../DataGridFilterContext/VisilibityContext";
@@ -353,7 +354,8 @@ const XLSFilterInReact = ({
             <div ref={modalRef}
                 className={`custom-selector ${sortType !== "noFilter" && "cursor-pointer"}`}
                 style={{ minWidth: findMemoisez }}
-                onClick={() => sortType !== "noFilter" && setIsOptionsVisible(secondSortingKey ? secondSortingKey : key)}>
+                onClick={() => sortType !== "noFilter" && setIsOptionsVisible(secondSortingKey ? secondSortingKey : key)}
+            >
 
                 {sortType !== "none" &&
 
@@ -373,11 +375,11 @@ const XLSFilterInReact = ({
 
                                 {/* FILTER ICON*/}
                                 {isFilter &&
-                                    <></>
+                                    <>x</>
                                     // <dataRefs.filter size={19} className={`text-primary-color-1-600`} />
 
                                 }
-                                <></>
+                                <>x</>
                                 {/* ARROW ICON */}
                                 {/* <dataRefs.filterIconOpener size={19} style={{ transform: rotation }} className={`mr-2`} /> */}
 
@@ -409,8 +411,8 @@ const XLSFilterInReact = ({
                                 :
 
                                 // ALPHABETICAL SORTER
-                                <Sorter bigger={dataRefs.smallerToBigger} smaller={dataRefs.biggerToSmaller}
-                                    IconDataRefsBigger={dataRefs.sortAlpha} IconDataRefsSmaller={dataRefs.sortZalpha} />
+                                <Sorter bigger={dataGridRefs.smallerToBigger} smaller={dataGridRefs.biggerToSmaller}
+                                    IconDataRefsBigger={dataGridRefs.atozIcon} IconDataRefsSmaller={dataGridRefs.ztoaItonc} />
 
                         }
 
@@ -467,7 +469,8 @@ const XLSFilterInReact = ({
 
                         <XlsOptionsRender getFilteredRowsOptions={getFilteredRowsOptions}
                             dispatchType={dispatchType}
-                            keyInfo={key} />
+                            keyInfo={key}
+                            sortType={sortType} />
 
                         {/* BUTTONS */}  {/* BUTTONS */} {/* BUTTONS */}
 

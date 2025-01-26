@@ -6,7 +6,8 @@ import { toggleCheckedOptionDataGridFilters } from "../DataGridStateManagement/c
 function XlsOptionsRender({
     getFilteredRowsOptions,
     dispatchType,
-    keyInfo
+    keyInfo,
+    sortType
 }) {
 
     const { checkedState, checkedDispatch } = useCheckedContext();
@@ -17,7 +18,7 @@ function XlsOptionsRender({
     const handleClickCheckBox = useCallback((e, option) => {
         e.preventDefault();
         checkedDispatch(toggleCheckedOptionDataGridFilters({ dispatchType, key: keyInfo, option }))
-    }, [dispatchType, keyInfo, checkedDispatch]);
+    }, [dispatchType, keyInfo, currentChecked]);
 
     //////////////////
     // Get the options with the 
@@ -44,7 +45,9 @@ function XlsOptionsRender({
 
                             <div
                                 className={`row items-center`}
-                                onClick={(e) => handleClickCheckBox(e, option)}
+                                onClick={(e) => {
+                                    handleClickCheckBox(e, (sortType === "date" ? formatToDateForDisplay(option) : option))
+                                }}
                             >
                                 <input
                                     type={`checkbox`}
