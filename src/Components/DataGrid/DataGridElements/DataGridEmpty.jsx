@@ -1,4 +1,4 @@
-import { dataRefs } from "@/JSONS/Fr-Texts/GlobalTexts";
+import { dataRefs } from "@/JSONS/FrTexts/globalTexts";
 
 import Text from "@/Components/Basic/Text";
 import CardLayout from "@/Components/Layout/CardLayout";

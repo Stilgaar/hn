@@ -9,7 +9,7 @@ import Text from "@/Components/Basic/Text";
 import Title from "@/Components/Basic/Title";
 
 // all the texts icons etc
-import { dataRefs } from "@/JSONS/Fr-Texts/GlobalTexts";
+import { dataRefs } from "@/JSONS/FrTexts/globalTexts";
 
 // array to show data
 import { statGlobalCards } from "@/JSONS/FR/DashboardArray";

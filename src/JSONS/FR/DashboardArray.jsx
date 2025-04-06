@@ -1,4 +1,4 @@
-import { dataRefs } from "../Fr-Texts/GlobalTexts"
+import { dataRefs } from "../FrTexts/globalTexts"
 
 export const titlesDashboard = [
     { title: dataRefs.companies_Title },

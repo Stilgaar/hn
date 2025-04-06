@@ -6,7 +6,7 @@ import Text from "@/Components/Basic/Text";
 import LottiesRender from "@/Components/Basic/LottiesRender";
 
 // all the texts icons etc
-import { dataRefs } from "@/JSONS/Fr-Texts/GlobalTexts";
+import { dataRefs } from "@/JSONS/FrTexts/globalTexts";
 
 // array to render the componen
 import { companyDashboardLottiesCard } from "@/JSONS/FR/DashboardArray";

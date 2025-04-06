@@ -1,4 +1,4 @@
-import { dataRefs } from "@/JSONS/Fr-Texts/GlobalTexts";
+import { dataRefs } from "@/JSONS/FrTexts/globalTexts";
 
 const initializeFilters = (dataGridColumns) => {
     const initialFilters = {};

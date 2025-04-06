@@ -1,5 +1,5 @@
 import { formatToDateForDisplay } from "@/Functions/formatingData";
-import { dataRefs } from "@/JSONS/Fr-Texts/GlobalTexts";
+import { dataRefs } from "@/JSONS/FrTexts/globalTexts";
 
 export const computeFilteredRows = (
     rows,

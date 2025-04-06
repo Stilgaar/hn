@@ -38,7 +38,7 @@
 
 import { Fragment, useMemo } from "react";
 
-import { dataRefs } from "@/JSONS/Fr-Texts/GlobalTexts";
+import { dataRefs } from "@/JSONS/FrTexts/globalTexts";
 
 import { findNextWidth } from "../DataGridFunctions/getRowWidth";
 

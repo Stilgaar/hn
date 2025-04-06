@@ -4,7 +4,7 @@ import React, { useEffect, useState, useCallback, useMemo, useRef } from "react"
 import useGetFilters from "../DataGridHooks/useGetFilters";
 
 // Al the texts and stuff
-import { dataRefs } from "@/JSONS/Fr-Texts/GlobalTexts";
+import { dataRefs } from "@/JSONS/FrTexts/globalTexts";
 import { dataGridRefs } from "../DataGridRenderElements/dataGridRefs";
 
 // Personal hook to consume the related context. This is for the popup windows for the search. (so there is only one that can pop up at the same time)

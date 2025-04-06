@@ -1,4 +1,4 @@
-export const generalTextRefs = {
+export const genteralDefaultTexts = {
     okButton: "Ok",
     abord: "Annuler",
 }

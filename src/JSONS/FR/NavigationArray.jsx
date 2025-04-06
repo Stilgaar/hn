@@ -7,7 +7,7 @@ import ErrorBoundary from "@/Functions/Error/ErrorBoundary";
 
 import { lazyRetry } from "@/Functions/NavigationHelpers/lazyRetry";
 
-import { dataRefs } from "../Fr-Texts/GlobalTexts";
+import { dataRefs } from "../FrTexts/globalTexts";
 
 const Dashboard = lazy(() => lazyRetry(() => import("../../Pages/Dashboard/Dashboard")));
 

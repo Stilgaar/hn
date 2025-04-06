@@ -2,7 +2,7 @@ import { createContext, useContext, useMemo } from "react";
 import { useReducer } from "react";
 import { filterReducer } from "../DataGridStateManagement/filterState/filterReducer";
 
-import { dataRefs } from "@/JSONS/Fr-Texts/GlobalTexts";
+import { dataRefs } from "@/JSONS/FrTexts/globalTexts";
 import { currentYear } from "@/Functions/formatingData";
 
 export const FilterContext = createContext()

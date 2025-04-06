@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 
-import { dataRefs } from "@/JSONS/Fr-Texts/GlobalTexts";
+import { dataRefs } from "@/JSONS/FrTexts/globalTexts";
 
 import { useCheckedContext } from "../DataGridFilterContext/CheckedContext";
 

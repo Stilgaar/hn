@@ -1,7 +1,7 @@
 import BtnDataGrid from "./BtnDataGrid";
 
 import { useFilterContext } from "../DataGridFilterContext/DataGridsFilterContext";
-import { dataRefs } from "@/JSONS/Fr-Texts/GlobalTexts";
+import { dataRefs } from "@/JSONS/FrTexts/globalTexts";
 import { dataGridRefs } from "../DataGridRenderElements/dataGridRefs";
 
 import { addDelFiltersDataGrid } from "../DataGridStateManagement/filterState/filterDispatch";

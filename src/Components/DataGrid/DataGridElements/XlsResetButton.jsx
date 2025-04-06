@@ -1,4 +1,4 @@
-import { dataRefs } from "@/JSONS/Fr-Texts/GlobalTexts";
+import { dataRefs } from "@/JSONS/FrTexts/globalTexts";
 import { dataGridRefs } from "../DataGridRenderElements/dataGridRefs";
 
 import BtnDataGrid from "./BtnDataGrid";

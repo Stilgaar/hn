@@ -1,5 +1,5 @@
 // all the texts icons etc
-import { dataRefs } from "@/JSONS/Fr-Texts/GlobalTexts";
+import { dataRefs } from "@/JSONS/FrTexts/globalTexts";
 
 // wrapper for the dashboard elements so they're all the same
 import DashboardElementsWrapper from "../DashboardSharedElements/DashboardElementsWrapper";
